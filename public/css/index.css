@@ -1,0 +1,819 @@
+.bg-image {
+  height: 112vh;
+  overflow: hidden;
+}
+
+.bg-image-others {
+  background-image: url("../img/sample.png");
+  height: 11vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-image-others-new-user {
+  background-image: url("../img/sample.png");
+  height: 11vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* HOME BG IMAGE */
+.bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/homebg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(50%);
+  z-index: -1;
+}
+
+.bg-text {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+.bg-text h1 {
+  font-size: 5rem;
+  font-weight: bolder;
+}
+
+.bg-text p {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+}
+
+.bg-buttons,
+.bg-text h1,
+.bg-text p,
+.downArrow {
+  user-select: none;
+}
+
+#dropdownBtn {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+#infoBtn {
+  padding: 12px 16px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  background-color: #4a90e2;
+  transition: transform 0.3s ease;
+}
+
+#dropdownBtn:hover,
+#infoBtn:hover {
+  transform: translateY(-2px);
+}
+
+.downArrow {
+  position: absolute;
+  bottom: 6%;
+  font-size: 2.5rem;
+  color: #fff;
+  animation: floatArrow 2s ease infinite;
+}
+
+@keyframes floatArrow {
+  0%,
+  100% {
+    transform: translateY(40px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* BOOK-SELLING SECTION */
+.selling-container {
+  margin-top: 5rem;
+}
+
+.bookHeader {
+  padding-bottom: 16px;
+}
+
+.imgWorkBook {
+  height: 520px;
+}
+
+.imgWorkBook img {
+  object-fit: contain;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.selling-content h2 {
+  margin-bottom: 24px;
+}
+
+.selling-content p {
+  font-size: 19px;
+}
+
+#btnBuy {
+  margin-right: 12px;
+}
+
+#guidedMeditationsButton,
+#sahajaButton,
+#viewMoreBlog {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 25px;
+}
+
+/* UTILITIES CONTAINER */
+.utilities-container {
+  margin: 6rem 0 4rem;
+  flex: 0 0 auto;
+}
+
+i.fa-3x {
+  background-color: #dbe9f9;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* UNIQUE CONTAINER */
+.unique-container {
+  margin-bottom: 4rem;
+}
+
+.fa-check {
+  color: green;
+  margin-right: 4px;
+  background-color: #dbe9f9;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.check-gap {
+  margin-top: 12px;
+}
+
+.unique-image-none {
+  display: none;
+}
+
+/* OFFERING CONTAINER */
+.offering-container {
+  margin-bottom: 6rem;
+}
+
+/* CONTENT CONTAINER */
+.mobile-header {
+  display: none;
+  font-weight: bolder;
+  padding-bottom: 12px;
+  font-size: 40px;
+}
+
+.desktop-header {
+  font-weight: bolder;
+  font-size: 45px;
+}
+
+.shri img {
+  border-radius: 25px;
+}
+
+.side-content {
+  padding-left: 15px;
+}
+
+.side-content-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.side-content-item img {
+  width: 48%;
+  margin-right: 15px;
+  border-radius: 25px;
+}
+
+.side-content-text small {
+  font-size: 12px;
+  font-weight: bolder;
+  font-style: italic;
+  color: grey;
+}
+
+/* SAHAJA CONTAINER */
+.sahaja-container {
+  margin-bottom: 7rem;
+}
+
+#bar-line {
+  width: 50px;
+  border-top: 3px solid #000;
+  margin: auto;
+}
+
+.sahaja-container .image-hover {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.sahaja-container .image-hover .img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sahaja-container .image-hover:hover .img-fluid {
+  transform: scale(1.1);
+}
+
+.sahaja-container .image-hover .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.sahaja-container .image-hover:hover .overlay {
+  height: 100%;
+  opacity: 1;
+}
+
+.sahaja-container .image-hover .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translateY(10px);
+}
+
+.sahaja-container .image-hover:hover .text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.no-gap {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.no-gap > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* MEDITATORS CONTAINER */
+.countries a:hover {
+  color: #0000ff;
+}
+
+/* TESTIMONIAL CONTAINER */
+.testimonial-container {
+  margin: 5rem 0 5rem;
+}
+
+.rating i {
+  color: yellow; /* Color for stars */
+  margin-right: 2px; /* Small space between stars */
+}
+
+.testimonial-content {
+  padding: 20px;
+  font-size: 16px;
+}
+
+.testimonial-content blockquote {
+  font-style: italic;
+}
+
+.testimonial-content blockquote p {
+  margin-bottom: 1rem 0;
+}
+
+.testimonial-content .blockquote-footer {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* TRANSFORM CONTAINER */
+.transform-container {
+  margin-bottom: 2rem;
+}
+
+.transform-container p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Styling the dropdown menu on hover */
+a.dropdown-item:hover,
+a.dropdown-item:focus,
+#guidedMeditationsButton:hover,
+#sahajaButton:hover,
+#viewMoreBlog:hover {
+  color: #fff;
+  background-color: #000;
+  transition: all 250ms ease-in-out;
+}
+
+/* AUTHOR PAGE */
+.author {
+  padding: 50px 0;
+}
+
+#imgGita {
+  filter: contrast(65%) saturate(90%);
+}
+
+.author-content img {
+  width: 50%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+#author h1 {
+  margin: 1rem 0;
+}
+
+.paragraphs {
+  padding: 0 1.5rem;
+}
+
+#borderHeader {
+  margin-bottom: 1.5rem;
+}
+
+#borderText {
+  border-top: 1px solid #000;
+  padding-top: 1.5rem;
+}
+
+/* BLOG UPDATES PAGE */
+.blog-container {
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.blog-container .card:hover img {
+  transition: ease-in-out all 0.3s;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.blog-updates {
+  margin-bottom: 2rem;
+}
+
+.blog-updates .card {
+  padding: 0;
+  height: 480px;
+  width: 350px;
+}
+
+.blog-updates .card .img {
+  height: 170px;
+  overflow: hidden;
+}
+
+.blog-updates .card-body {
+  padding: 0.5rem 1.5rem 1rem;
+}
+
+.blog-updates .card-text {
+  margin-bottom: -0.1rem;
+}
+
+.blog-updates .card-bottom {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.blog-updates .cardReadMore {
+  text-decoration: none;
+  background-color: #ffc107;
+  border-radius: 8px;
+  color: #1b1b1b;
+  padding: 8px;
+}
+
+.blog-updates .jumbotron {
+  background-color: #fff;
+  color: #000;
+  font-size: 2.5rem;
+}
+
+.blog-updates .img {
+  width: 100%;
+  height: 200px;
+  transform: 0.2s;
+  margin-bottom: 8px;
+}
+
+.blog-updates small {
+  color: #000;
+}
+
+ul.pagination-margin {
+  margin: 2rem 0;
+}
+
+/* TOOLS CONTENT PAGE */
+.mobileMeditate {
+  display: none;
+}
+
+.tools-content {
+  margin: 4rem 0 1rem;
+}
+
+.tools-content img {
+  width: 100%;
+  border-radius: 25px;
+  margin-bottom: 1rem;
+}
+
+.tools-content p {
+  font-size: 20px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.bookHeader {
+  padding-bottom: 2rem;
+}
+
+.tool2 {
+  padding-top: 2rem;
+}
+
+/* BLOG ITEMS PAGE */
+.blogItemContainer {
+  flex-wrap: wrap-reverse;
+  margin-top: 2rem;
+}
+
+.blogBody {
+  margin: 2rem 0;
+}
+
+.blogImage {
+  width: 100%;
+  border-radius: 25px;
+}
+
+/* BOOK INFORMATION/LEARN MORE PAGE*/
+.book-information {
+  margin: 3rem 0;
+}
+
+.quote {
+  border: 1px solid #000;
+  padding: 24px;
+  margin: 36px 0 24px;
+}
+
+/* TERMS OF SERVICE PAGE */
+.TOS-container,
+.policy-container {
+  margin: 2rem 0;
+}
+
+.main-container h5 {
+  margin: 16px 0;
+}
+
+/* PRIVACY POLICY PAGE */
+
+/* AUTHOR EVENTS PAGE */
+.visit-container {
+  margin: 2rem 0;
+}
+
+/* CALENDAR PAGE */
+.calendar-container {
+  margin: 3rem 0;
+}
+
+.calendar {
+  min-width: 350px;
+  max-width: 50%;
+}
+
+.calendar h1 {
+  margin: 0 0 0.4em;
+  font-weight: bold;
+}
+
+nav.nav-calendar {
+  margin-bottom: 2rem;
+}
+
+.calendar .event {
+  color: #333;
+  display: block;
+  padding: 0.1em;
+  transition: all 0.25s ease;
+  margin-bottom: 0.5em;
+}
+
+.calendar .accordion-button:hover {
+  background: #d5d5d5;
+  text-decoration: none;
+  color: black;
+}
+
+.calendar .event_icon {
+  width: 4em;
+  float: left;
+  margin-right: 0.75em;
+}
+
+.calendar .event_month {
+  padding: 0.1em;
+  margin-bottom: 0.15em;
+  background: #4992fd;
+  font-size: 0.75em;
+  color: white;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+
+.calendar .event_day {
+  border: 1px solid #999;
+  background: white;
+  color: black;
+  font-size: 1.25em;
+  font-weight: bold;
+  border-bottom-left-radius: 0.1em;
+  border-bottom-right-radius: 0.1em;
+  padding: 0.7rem;
+}
+
+.calendar .event_title {
+  font-size: 1.5em;
+  height: 3em;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.calendar .btn {
+  margin-top: 0.5em;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+}
+
+/* USER PAGE */
+.create-error {
+  margin-left: 3rem;
+}
+
+.user-con {
+  margin: 10rem 0;
+}
+
+#user-box {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid gray;
+}
+
+#side-image {
+  flex: 1;
+  background-color: #f7f7f7;
+}
+
+#side-pic {
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid gray;
+  border-right: none;
+}
+
+#registerForm,
+#loginForm {
+  flex: 1;
+}
+
+.card .d-block {
+  flex: 1;
+  order: 1;
+  border-right: 3px solid gray;
+  border-bottom: none;
+}
+.card .p-5 {
+  flex: 1;
+  order: 2;
+}
+
+/* MODAL */
+.login-modal {
+  width: 90%;
+  margin: auto;
+}
+
+@media (max-width: 991px) {
+  .featured-content,
+  .side-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .side-content-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .featured-content img {
+    height: 90%;
+  }
+
+  h1.desktop-header {
+    margin-top: 48px;
+  }
+
+  .bg-text {
+    padding: 0;
+  }
+
+  .bg-text h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+
+  .bg-text p {
+    font-size: 1.5rem;
+  }
+
+  #dropdownBtn {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  #infoBtn {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .mobile-header {
+    display: block;
+  }
+
+  .desktop-header {
+    display: none;
+  }
+
+  .unique-image-none {
+    display: block;
+  }
+
+  .unique-image-display {
+    display: none;
+  }
+
+  .imgWorkBook img {
+    margin-top: 2rem;
+  }
+
+  .selling-content h2 {
+    margin-top: 4rem;
+  }
+
+  .utilities-container {
+    margin: 1rem 0 1rem;
+  }
+
+  .unique-container img,
+  .offering-container img {
+    margin-bottom: 1rem;
+    height: 460px;
+  }
+
+  .unique-container img {
+    height: 480px;
+  }
+
+  .mobileMeditate {
+    display: block;
+  }
+
+  .websiteMeditate {
+    display: none;
+  }
+
+  .author-content img {
+    width: 100%;
+  }
+
+  .meditators-container img {
+    height: 100%;
+  }
+
+  .utility-gap {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .side-content-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .side-content-item img {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .featured-content img,
+  .imgWorbook img {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .blog-updates h6,
+  .blog-updates small {
+    width: 90%;
+  }
+
+  #guidedMeditationsButton,
+  #sahajaButton {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 50%;
+  }
+
+  .card {
+    width: 90%;
+    margin: auto auto;
+  }
+
+  .unique-container img,
+  .offering-container img {
+    height: auto;
+  }
+
+  #form-message {
+    margin-top: 2rem;
+  }
+
+  .card {
+    margin: 3rem auto 1.5rem;
+  }
+
+  .card .d-block {
+    border-right: none;
+    border-bottom: 3px solid gray;
+    order: 1;
+  }
+  .card .p-5 {
+    order: 2;
+  }
+}

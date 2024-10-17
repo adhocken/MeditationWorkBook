@@ -1,0 +1,83 @@
+<%- include('./partials/header.ejs'); %>
+
+<!-- Background image -->
+<div class="bg-image-others"></div>
+
+<main class="main-container">
+  <section class="blog-updates">
+    <div class="container">
+      <!-- Blog Headline -->
+      <div class="row m-4">
+        <div class="col-12">
+          <h1 class="jumbotron text-center">Latest Blog Updates</h1>
+          <p class="text-center">
+            Conversations with change-makers, on topics that matter.
+          </p>
+        </div>
+      </div>
+
+      <!-- Post blogs -->
+      <div
+        class="blog-container d-flex flex-row align-items-center justify-content-center"
+      >
+        <% if (blogs.length === 0) { %>
+
+        <div>No posts yet! Check back later.</div>
+
+        <% } else { %> <% blogs?.forEach(function(blog) { %>
+
+        <div class="card">
+          <div class="img">
+            <img
+              src="../img/uploads/<%= blog.img %>"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= blog.title %></h5>
+            <p class="card-text"><%- blog.shortBody %> ...</p>
+            <div
+              class="card-bottom d-flex flex-row justify-content-between align-items-center position-absolute"
+            >
+              <p class="card-text">
+                <small class="text-body-secondary"
+                  ><%= blog.createdAt.toLocaleDateString('default', { month:
+                  'long', day: 'numeric', year: 'numeric' }) %> %></small
+                >
+              </p>
+              <a href="/blogs/<%= blog._id %>" class="cardReadMore"
+                >Read more</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <% }); %> <% } %>
+      </div>
+      <!-- Post blogs -->
+
+      <% if (blogs.length !== 0) { %>
+      <div class="row">
+        <ul class="pagination d-flex justify-content-center pagination-margin">
+          <li class="page-item <%= (page == 1||undefined) ? 'disabled' : '' %>">
+            <a class="page-link" href="/blogs?page=<%= page-1 %>">Previous</a>
+          </li>
+
+          <% let i = 1; while (i <= totalPages) { %>
+          <li class="page-item <%= i==page ? 'active' : '' %>">
+            <a class="page-link" href="/blogs?page=<%= i %>"><%= i %></a>
+          </li>
+          <% i++ } %>
+
+          <li class="page-item <%= (page == totalPages) ? 'disabled' : '' %>">
+            <a class="page-link" href="/blogs?page=<%= nextPage %>">Next</a>
+          </li>
+        </ul>
+      </div>
+      <% } %>
+    </div>
+  </section>
+</main>
+
+<%- include('./partials/footer.ejs'); %>

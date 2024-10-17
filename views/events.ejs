@@ -1,0 +1,212 @@
+<%- include('./partials/blogHeader.ejs'); %>
+
+<div class="bg-image-others"></div>
+
+<main class="main-container" id="authorFormContainer">
+  <section class="visit-container">
+    <div class="container">
+      <div class="row">
+        <h1 class="jumbotron text-center" id="authorVisit">
+          Author Visit Request
+        </h1>
+        <p class="text-center">
+          After you fill out this request form, we will contact you within two
+          business days to confirm availability and details.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <form id="eventForm" action="/events" method="POST">
+            <!-- Name -->
+            <div class="form-group mb-3">
+              <label for="name"
+                >Name/Organization <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                id="name"
+                placeholder="Enter your name or organization"
+              />
+              <p
+                class="event-name-validation validation-font text-danger"
+                id="event-name-validation"
+              ></p>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group mb-3">
+              <label for="email"
+                >Email <span class="text-danger">*</span></label
+              >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter your email"
+              />
+              <p
+                class="event-email-validation validation-font text-danger"
+                id="event-email-validation"
+              ></p>
+            </div>
+
+            <!-- Contact Number -->
+            <div class="form-group mb-3">
+              <label for="contact"
+                >Contact Number <span class="text-danger">*</span></label
+              >
+              <input
+                type="tel"
+                name="contact"
+                class="form-control"
+                id="contact"
+                placeholder="Enter your 10-digit phone number"
+              />
+              <p
+                class="event-contact-validation validation-font text-danger"
+                id="event-contact-validation"
+              ></p>
+            </div>
+
+            <!-- Organization or Event -->
+            <div class="form-group mb-3">
+              <label for="orgEvent"
+                >Event Name <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="orgEvent"
+                class="form-control"
+                id="orgEvent"
+                placeholder="Enter the event name"
+              />
+              <p
+                class="event-orgEvent-validation validation-font text-danger"
+                id="event-orgEvent-validation"
+              ></p>
+            </div>
+
+            <!-- Location -->
+            <div class="form-group mb-3">
+              <label for="location"
+                >Location <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="location"
+                class="form-control"
+                id="location"
+                placeholder="Enter event venue in Ontario"
+              />
+              <p
+                class="event-location-validation validation-font text-danger"
+                id="event-location-validation"
+              ></p>
+            </div>
+
+            <!-- Preferred Date -->
+            <div class="form-group mb-3">
+              <label for="preferredDate"
+                >Preferred Date <span class="text-danger">*</span></label
+              >
+              <input
+                type="date"
+                name="preferredDate"
+                class="form-control"
+                id="preferredDate"
+              />
+              <p
+                class="event-preferredDate-validation validation-font text-danger"
+                id="event-preferredDate-validation"
+              ></p>
+            </div>
+
+            <!-- Alternate Date -->
+            <div class="form-group mb-3">
+              <label for="alternateDate"
+                >Alternate Date <span class="text-danger">*</span></label
+              >
+              <input
+                type="date"
+                name="alternateDate"
+                class="form-control"
+                id="alternateDate"
+              />
+              <p
+                class="event-alternateDate-validation validation-font text-danger"
+                id="event-alternateDate-validation"
+              ></p>
+            </div>
+
+            <!-- Tentative Time  -->
+            <div class="form-group mb-3">
+              <label for="time"
+                >Tentative Time <span class="text-danger">*</span></label
+              >
+              <input type="time" name="time" class="form-control" id="time" />
+              <p
+                class="event-time-validation validation-font text-danger"
+                id="event-time-validation"
+              ></p>
+            </div>
+
+            <!-- Anticipated Number of Attendees -->
+            <div class="form-group mb-3">
+              <label for="attendees"
+                >Anticipated Number of Attendees
+                <span class="text-danger">*</span></label
+              >
+              <input
+                type="number"
+                name="attendees"
+                class="form-control"
+                id="attendees"
+                placeholder="Enter the anticipated number of attendees"
+              />
+              <p
+                class="event-attendees-validation validation-font text-danger"
+                id="event-attendees-validation"
+              ></p>
+            </div>
+
+            <!-- Additional Details -->
+            <div class="form-group mb-3">
+              <label for="additionalDetails"
+                >Event Details
+                <span class="text-danger">*</span>
+              </label>
+              <textarea
+                class="form-control"
+                name="additionalDetails"
+                id="additionalDetails"
+                rows="4"
+                placeholder="Enter a brief description for the event."
+              ></textarea>
+              <p
+                class="event-additionalDetails-validation validation-font text-danger"
+                id="event-additionalDetails-validation"
+              ></p>
+            </div>
+            <!-- Submit Button -->
+            <div class="d-flex justify-content-between">
+              <a class="btn btn-secondary" href="/">Back</a>
+              <button type="submit" class="btn btn-primary">
+                Submit Request
+              </button>
+            </div>
+            <div
+              class="d-flex align-items-center justify-content-center"
+              id="form-message"
+            ></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./partials/blogFooter.ejs'); %>

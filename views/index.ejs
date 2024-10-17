@@ -1,0 +1,654 @@
+<%- include('./partials/header.ejs'); %>
+
+<!-- Background image -->
+<div
+  class="bg-image d-flex align-items-center justify-content-center position-relative"
+>
+  <div class="bg-text">
+    <h1>Unlock the Power of Meditation</h1>
+    <p>
+      Discover practical advice and easy tracking tools to build your own
+      meditation habit.
+    </p>
+    <div class="bg-buttons">
+      <div class="btn-group">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          id="dropdownBtn"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Get Your Copy Now
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownBuyButton">
+          <a class="dropdown-item" href="https://www.amazon.ca/dp/1777755689"
+            >Amazon Canada</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.nl/dp/1777755689"
+            >Amazon Netherlands</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.co.jp/dp/1777755689"
+            >Amazon Japan</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.com/dp/1777755689"
+            >Amazon US</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.it/dp/1777755689"
+            >Amazon Italy</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.pl/dp/1777755689"
+            >Amazon Poland</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.de/dp/1777755689"
+            >Amazon Germany</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.es/dp/1777755689"
+            >Amazon Spain</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.se/dp/1777755689"
+            >Amazon Sweden</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.co.uk/dp/1777755689"
+            >Amazon UK</a
+          >
+          <a class="dropdown-item" href="https://www.amazon.fr/dp/1777755689"
+            >Amazon France</a
+          >
+          <a
+            class="dropdown-item"
+            href="https://www.amazon.com.au/dp/1777755689"
+            >Amazon Australia</a
+          >
+        </div>
+      </div>
+      <a class="btn btn-primary" id="infoBtn" href="/book-info" role="button"
+        >Learn More</a
+      >
+    </div>
+  </div>
+  <i class="fa-solid fa-angle-down downArrow"></i>
+</div>
+
+<main class="main-container">
+  <section
+    class="selling-container"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex justify-content-center imgWorkBook">
+          <img src="img/book image.png" alt="Meditation Workbook Image" />
+        </div>
+        <div class="col-lg-6 selling-content">
+          <h2>Why This Book?</h2>
+          <p class="text-justify">
+            You know meditation is good for you - so how do you get started?
+          </p>
+          <p class="text-justify">Use this book!</p>
+          <p class="text-justify">
+            It is full of practical advice and has easy tracking tools so you
+            can build your own meditation habit.
+          </p>
+          <p class="text-justify">
+            By immersing yourself in this book and following the exercises,
+            you'll gain a deeper understanding of meditation and its countless
+            benefits not in general terms, but for you, your circumstances, your
+            life, your needs.
+          </p>
+          <p class="text-justify">
+            Let this workbook be your guide as the authors pass on their
+            knowledge, helping you establish a fulfilling meditation practice.
+          </p>
+          <p class="text-justify">
+            You’ll find out what surprised them along the way, and why neither
+            of them ever wants to stop.
+          </p>
+          <h6>Authors: Julie Mandal & Gita Pattison</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UTILITIES CONTAINER -->
+  <section
+    class="utilities-container"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container">
+      <div class="row text-center mt-4">
+        <!-- Practical Advice -->
+        <div class="col-md-4 col-sm-12 utility-gap">
+          <div class="d-flex align-items-center p-3">
+            <i class="fa-solid fa-chart-simple fa-3x"></i>
+            <div class="ml-3 text-left">
+              <h4 class="text-primary">Practical Advice</h4>
+              <p>
+                Gain a deeper understanding of meditation and its countless
+                benefits.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Easy Tracking Tools -->
+        <div class="col-md-4 col-sm-12 utility-gap">
+          <div class="d-flex align-items-center p-3">
+            <i class="fa-solid fa-database fa-3x"></i>
+            <div class="ml-3 text-left">
+              <h4 class="text-primary">Easy Tracking Tools</h4>
+              <p>
+                Track your progress and build a consistent meditation practice.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Personalized Exercises -->
+        <div class="col-md-4 col-sm-12 utility-gap">
+          <div class="d-flex align-items-center p-3">
+            <i class="fa-solid fa-plane fa-3x"></i>
+            <div class="ml-3 text-left">
+              <h4 class="text-primary">Personalized Exercises</h4>
+              <p>
+                Immerse yourself in the book and follow exercises to enhance
+                your meditation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIQUE CONTAINER -->
+  <section
+    class="unique-container"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Text Content -->
+        <div class="col-md-6 unique-image-none">
+          <img
+            src="/img/unique-section.png"
+            alt="Meditation"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>What Makes Our Book Unique</h2>
+          <p>
+            Explore the practical advice and easy tracking tools in our
+            'Meditation Workbook' to enhance your meditation experience.
+          </p>
+          <div class="mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-check"></i>
+            <div class="check-gap">
+              <strong>Comprehensive Guidance</strong>
+              <p>
+                Get comprehensive guidance on building a strong meditation
+                practice.
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-check"></i>
+            <div class="check-gap">
+              <strong>Interactive Exercises</strong>
+              <p>
+                Engage in interactive exercises to deepen your meditation
+                practice.
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-check"></i>
+            <div class="check-gap">
+              <strong>Mindfulness Techniques</strong>
+              <p>
+                Learn mindfulness techniques to bring peace and clarity to your
+                life.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Image Content -->
+        <div class="col-md-6 unique-image-display">
+          <img
+            src="/img/unique-section.png"
+            alt="Meditation"
+            class="img-fluid rounded"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERINGS CONTAINER -->
+  <section
+    class="offering-container"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img
+            src="/img/offerings-section.png"
+            alt="Meditation"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2 class="text-primary">Our Offerings</h2>
+          <p>
+            Immerse yourself in our 'Meditation Workbook' and experience the
+            transformative power of meditation.
+          </p>
+          <div class="mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-check"></i>
+            <div class="check-gap">
+              <strong class="text-primary">Practical Advice</strong>
+              <p>
+                Receive practical advice on meditation from experienced authors.
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-check"></i>
+            <div class="check-gap">
+              <strong class="text-primary">Guided Exercises</strong>
+              <p>Follow guided exercises to deepen your meditation practice.</p>
+            </div>
+          </div>
+          <div class="mb-3 d-flex align-items-center">
+            <i class="fa-solid fa-check"></i>
+            <div class="check-gap">
+              <strong class="text-primary">Track Your Progress</strong>
+              <p>Use tracking tools to monitor your meditation journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="content-container"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container">
+      <div class="row">
+        <!-- Featured Content -->
+        <div class="col-lg-8 mb-4 featured-content">
+          <h1 class="mobile-header text-center">Book Content</h1>
+          <div class="shri d-flex justify-content-center">
+            <img
+              src="img/shri.png"
+              class="img-fluid mb-3"
+              alt="Featured Image"
+            />
+          </div>
+
+          <h6>FROM MEDITATION WORKBOOK</h6>
+          <h4>Founder of Sahaja Yoga: Shri Mataji Nirmala Devi</h4>
+          <p>
+            Shri Mataji Nirmala Devi is the Founder of Sahaja Yoga, she has
+            travelled the world to share this unique meditation technique.
+          </p>
+        </div>
+
+        <!-- Side Content -->
+        <div class="col-lg-4 side-content">
+          <h1 class="desktop-header">Book Content</h1>
+          <div class="side-content-item mb-4 d-flex">
+            <img
+              src="img/footsoak-blog.png"
+              class="img-fluid"
+              alt="Side Content Image"
+            />
+            <div class="side-content-text d-flex flex-column">
+              <h6>FOOTSOAK</h6>
+              <p class="text-justify">
+                Enhance your meditation routine with a simple ritual
+              </p>
+              <small>By Meditation Workbook</small>
+            </div>
+          </div>
+          <div class="side-content-item mb-4 d-flex">
+            <img
+              src="img/kundalani.png"
+              class="img-fluid"
+              alt="Side Content Image"
+            />
+            <div class="side-content-text d-flex flex-column">
+              <h6>RAISE YOUR KUNDALANI</h6>
+              <p class="text-justify">The Art of Raising Your Kundalani</p>
+              <small>By Meditation Workbook</small>
+            </div>
+          </div>
+          <div class="side-content-item mb-4 d-flex">
+            <img
+              src="img/bhandan.png"
+              class="img-fluid"
+              alt="Side Content Image"
+            />
+            <div class="side-content-text d-flex flex-column">
+              <h6>GIVE YOURSELF A BHANDAN</h6>
+              <p class="text-justify">Relax and Give Yourself a Bhandan</p>
+              <small>By Meditation Workbook</small>
+            </div>
+          </div>
+          <div class="side-content-item mb-4 d-flex">
+            <img
+              src="img/subtlesystem.png"
+              class="img-fluid"
+              alt="Side Content Image"
+            />
+            <div class="side-content-text d-flex flex-column">
+              <h6>SUBTLE SYSTEM</h6>
+              <p class="text-justify">
+                In Depth Learning about our Subtle System
+              </p>
+              <small>By Meditation Workbook</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="meditators-container"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container">
+      <h2 class="text-center mb-4 text-primary">Meet Meditators Near You</h2>
+      <p class="text-center mb-5">
+        Explore vibrant communities of meditators in Austria, Canada, Germany,
+        and the United States and discover local meditation events and
+        resources.
+      </p>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <img
+            src="/img/meditators-map.png"
+            alt="Animated Map"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div class="col-md-6">
+          <div class="list-group countries">
+            <a
+              href="https://sahajayoga.at/meditations-kurse-finden/"
+              class="list-group-item list-group-item-action"
+            >
+              <h5 class="mb-1">Austria</h5>
+              <p class="mb-1">
+                Join meditators in Vienna for weekly gatherings in local parks.
+              </p>
+            </a>
+            <a
+              href="https://www.sahajayoga.ca/free-classes"
+              class="list-group-item list-group-item-action"
+            >
+              <h5 class="mb-1">Canada</h5>
+              <p class="mb-1">
+                Connect with meditation communities in Toronto's vibrant city
+                center.
+              </p>
+            </a>
+            <a
+              href="https://www.sahajayoga.de/kurse/"
+              class="list-group-item list-group-item-action"
+            >
+              <h5 class="mb-1">Germany</h5>
+              <p class="mb-1">
+                Discover meditation retreats in the serene landscapes of
+                Bavaria.
+              </p>
+            </a>
+            <a
+              href="https://us.sahajayoga.org/classes-near-me/"
+              class="list-group-item list-group-item-action"
+            >
+              <h5 class="mb-1">United States</h5>
+              <p class="mb-1">
+                Explore extensive meditation workshops across multiple states.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="sahaja-container"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container text-center my-4">
+      <h1>Explore Sahaja Yoga</h1>
+      <p>
+        Discover the transformative power of meditation through our 'Meditation
+        Workbook.'
+      </p>
+      <hr id="bar-line" />
+      <!-- Decorative line -->
+    </div>
+    <div class="container">
+      <div class="row no-gap">
+        <!-- First Row -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="image-hover">
+            <img
+              src="/img/related-shri.png"
+              alt="Founder of Sahaja Yoga"
+              class="img-fluid"
+            />
+            <a
+              href="https://www.sahajayoga.org.in/about-sahaja-yoga-shri-mata-ji-nirmala-devi"
+              class="overlay"
+            >
+              <div class="text">Founder of Sahaja Yoga</div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="image-hover">
+            <img
+              src="/img/related-footsoak.png"
+              alt="Footsoak"
+              class="img-fluid"
+            />
+            <a
+              href="https://www.sahajayogameditation.online/footsoaking#:~:text=Place%20your%20feet%20in%20a,chakras%20for%2010-15%20minutes."
+              class="overlay"
+            >
+              <div class="text">Foot Soaking</div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="image-hover">
+            <img
+              src="/img/related-kundalani.png"
+              alt="Kundalani"
+              class="img-fluid"
+            />
+            <a
+              href="https://www.discoversahajayoga.org/kundalini#:~:text=Kundalini%20is%20the%20power%20of,bone%20resides%20a%20sacred%20energy)."
+              class="overlay"
+            >
+              <div class="text">Kundalani</div>
+            </a>
+          </div>
+        </div>
+        <!-- Second Row -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="image-hover">
+            <img
+              src="/img/related-bhandan.png"
+              alt="Bhandan"
+              class="img-fluid"
+            />
+            <a
+              href="https://www.sahajayogameditation.online/raising-kundalini-putting-a-bandhan"
+              class="overlay"
+            >
+              <div class="text">Bhandan</div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="image-hover">
+            <img
+              src="/img/related-subtlesystem.png"
+              alt="Subtle System"
+              class="img-fluid"
+            />
+            <a
+              href="https://sahajaonline.com/energy-system/overview/#:~:text=Sahaja%20meditation%20harnesses%20the%20power,specific%20human%20characteristics%20and%20traits."
+              class="overlay"
+            >
+              <div class="text">Subtle System</div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="image-hover">
+            <img
+              src="/img/related-meditations.png"
+              alt="Guided Meditations"
+              class="img-fluid"
+            />
+            <a href="https://wemeditate.com/" class="overlay">
+              <div class="text">Guided Meditations</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="testimonial-container"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <img
+            src="/img/customer-review.png"
+            alt="Amazon Customer"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="testimonial-content">
+            <div class="rating">
+              <i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i>
+            </div>
+            <blockquote class="blockquote">
+              <p>
+                I wholeheartedly recommend this meditation book to anyone
+                seeking spiritual growth and wants to learn about meditation. It
+                is amazing and can bring peace to your life. I am now buying
+                this book for my friend.
+              </p>
+              <div class="blockquote-footer">Amazon Customer</div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="transform-container text-center"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
+    <div class="container">
+      <h3 class="text-primary">Ready to Transform Your Meditation Practice?</h3>
+      <p>
+        Get your hands on the 'Meditation Workbook' and unlock the power of
+        meditation today.
+      </p>
+      <div class="bg-buttons">
+        <div class="btn-group">
+          <button
+            class="btn btn-primary dropdown-toggle dbtn-2"
+            id="dropdownBtn"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            style="border: 1px solid #000; color: #000"
+          >
+            Buy Now
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownBuyButton">
+            <a class="dropdown-item" href="https://www.amazon.ca/dp/1777755689"
+              >Amazon Canada</a
+            >
+            <a class="dropdown-item" href="https://www.amazon.nl/dp/1777755689"
+              >Amazon Netherlands</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://www.amazon.co.jp/dp/1777755689"
+              >Amazon Japan</a
+            >
+            <a class="dropdown-item" href="https://www.amazon.com/dp/1777755689"
+              >Amazon US</a
+            >
+            <a class="dropdown-item" href="https://www.amazon.it/dp/1777755689"
+              >Amazon Italy</a
+            >
+            <a class="dropdown-item" href="https://www.amazon.pl/dp/1777755689"
+              >Amazon Poland</a
+            >
+            <a class="dropdown-item" href="https://www.amazon.de/dp/1777755689"
+              >Amazon Germany</a
+            >
+            <a class="dropdown-item" href="https://www.amazon.es/dp/1777755689"
+              >Amazon Spain</a
+            >
+            <a class="dropdown-item" href="https://www.amazon.se/dp/1777755689"
+              >Amazon Sweden</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://www.amazon.co.uk/dp/1777755689"
+              >Amazon UK</a
+            >
+            <a class="dropdown-item" href="https://www.amazon.fr/dp/1777755689"
+              >Amazon France</a
+            >
+            <a
+              class="dropdown-item"
+              href="https://www.amazon.com.au/dp/1777755689"
+              >Amazon Australia</a
+            >
+          </div>
+        </div>
+        <a class="btn btn-primary" id="infoBtn" href="/book-info" role="button"
+          >Learn More</a
+        >
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./partials/footer.ejs'); %>

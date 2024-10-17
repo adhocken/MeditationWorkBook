@@ -1,0 +1,60 @@
+<section id="sidebar">
+  <a href="#" class="brand">
+    <img
+      class="img_logo"
+      src="../../img/meditationworkbook.png"
+      alt="Meditation Workbook Logo"
+    />
+    <span class="text">Management</span>
+  </a>
+  <ul class="side-menu top">
+    <li
+      class="<%= (pageTitle !== null && pageTitle !== 'undefined' && pageTitle === 'Home') && 'active' %>"
+    >
+      <a href="/dashboard">
+        <i class="bx bxs-dashboard"></i>
+        <span class="text">Dashboard</span>
+      </a>
+    </li>
+    <li
+      class="<%= (pageTitle !== null && pageTitle !== 'undefined' && pageTitle ==='Authors') && 'active' %>"
+    >
+      <a href="/dashboard/authors">
+        <i class="bx bxs-group"></i>
+        <span class="text">Authors</span>
+      </a>
+    </li>
+    <li
+      class="<%= (pageTitle !== null && pageTitle !== 'undefined' && pageTitle === 'Events') && 'active' %>"
+    >
+      <a href="/dashboard/events?page=1">
+        <i class="bx bxs-calendar"></i>
+        <span class="text">Events</span>
+      </a>
+    </li>
+    <li
+      class="<%= (pageTitle !== null && pageTitle !== 'undefined' && pageTitle === 'Blogs') && 'active'%>"
+    >
+      <a href="/dashboard/blogs?page=1">
+        <i class="bx bxs-shopping-bag-alt"></i>
+        <span class="text">Blogs</span>
+      </a>
+    </li>
+    <li
+      class="<%= (pageTitle !== null && pageTitle !== 'undefined' && pageTitle === 'Subscribers') && 'active' %>"
+    >
+      <a href="/dashboard/subscriptions?page=1">
+        <i class="bx bxs-user-detail"></i>
+        <span class="text">Subscribers</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu">
+    <li>
+      <form class="sidebar-logout" action="/user/logout" method="post">
+        <i class="bx bxs-log-out-circle"></i>
+        <button class="btn sidebar-logout-btn" type="submit">Logout</button>
+      </form>
+    </li>
+  </ul>
+</section>

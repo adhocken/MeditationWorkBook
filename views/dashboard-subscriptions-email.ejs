@@ -1,0 +1,71 @@
+<!-- HEADER -->
+<%- include('./partials/dashboard/header.ejs'); %>
+<!-- HEADER -->
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2 class="mb-4 text-center">Email Subscribers</h2>
+      <form
+        id="subscriberEmail"
+        action="/dashboard/send-subscriber-email"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="to">To:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="to"
+            name="to"
+            value="<%= emails %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="subject"
+            name="subject"
+            value="Updates from Meditation Workbook"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="body">Body:</label>
+          <textarea
+            class="form-control"
+            id="body"
+            name="body"
+            rows="6"
+            required
+          >
+          <%= emailBody %></textarea
+          >
+        </div>
+        <div class="form-group">
+          <label for="dropzone">Attachments:</label>
+          <div id="dropzone" class="dropzone" style="min-height: 0">
+            Drag and drop files here, or click to select files
+          </div>
+          <div id="fileList"></div>
+        </div>
+        <div class="email-buttons" style="display: flex">
+          <a class="btn btn-secondary" href="/dashboard/subscriptions?page=1"
+            >Back</a
+          >
+          <button type="submit" class="btn btn-primary email-send">
+            Send Email
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<%- include('./partials/dashboard/footer.ejs'); %>
+<!-- FOOTER -->

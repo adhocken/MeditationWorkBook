@@ -1,0 +1,93 @@
+<!-- HEADER -->
+<%- include('./partials/dashboard/header.ejs'); %>
+<!-- HEADER -->
+
+<!-- AUTHORS DATA -->
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Blogs</h3>
+      <div>
+        <a href="/dashboard/blogs-new" class="btn-blue">Add Blog</a>
+      </div>
+    </div>
+
+    <% if (blogs?.length === 0 ) { %>
+
+    <div class="text-center">
+      <p>No blogs available!</p>
+    </div>
+
+    <% } else { %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Date Created</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% blogs?.forEach(function(blog) { %>
+
+        <tr>
+          <td>
+            <img src="../img/uploads/<%= blog?.img %>" />
+          </td>
+
+          <td><span><%= blog?.title %></span></td>
+          <td>
+            <%= blog?.createdAt.toLocaleDateString('default', { month: 'long',
+            day: 'numeric', year: 'numeric' }) %>
+          </td>
+          <td>
+            <a href="/dashboard/blog-edit?id=<%= blog._id %>"
+              ><i class="bx bxs-message-square-edit bx-sm bx-tada-hover"></i
+            ></a>
+            <a href="/dashboard/blog-delete/<%= blog._id %>"
+              ><i
+                class="bx bxs-message-square-x bx-sm bx-tada-hover text-danger"
+              ></i
+            ></a>
+          </td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+
+      <% } %>
+    </table>
+    <% if (blogs.length !== 0) { %>
+    <div class="row">
+      <ul class="pagination d-flex justify-content-center pagination-margin">
+        <li class="page-item <%= (page == 1||undefined) ? 'disabled' : '' %>">
+          <a class="page-link" href="/dashboard/blogs?page=<%= page-1 %>"
+            >Previous</a
+          >
+        </li>
+
+        <% let i = 1; while (i <= totalPages) { %>
+        <li class="page-item <%= i==page ? 'active' : '' %>">
+          <a class="page-link" href="/dashboard/blogs?page=<%= i %>"
+            ><%= i %></a
+          >
+        </li>
+        <% i++ } %>
+
+        <li class="page-item <%= (page == totalPages) ? 'disabled' : '' %>">
+          <a class="page-link" href="/dashboard/blogs?page=<%= nextPage %>"
+            >Next</a
+          >
+        </li>
+      </ul>
+    </div>
+    <% } %>
+  </div>
+</div>
+<!-- AUTHOR DATA -->
+
+<!-- FOOTER -->
+<%- include('./partials/dashboard/footer.ejs'); %>
+<!-- FOOTER -->

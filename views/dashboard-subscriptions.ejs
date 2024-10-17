@@ -1,0 +1,91 @@
+<!-- HEADER -->
+<%- include('./partials/dashboard/header.ejs'); %>
+<!-- HEADER -->
+
+<!-- SUBSCRIPTIONS DATA -->
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Subscribers</h3>
+      <div>
+        <a href="/dashboard/emailSubscribers" class="btn-blue"
+          >Email Subscribers</a
+        >
+      </div>
+    </div>
+
+    <% if (subscriptions?.length === 0 ) { %>
+
+    <div class="text-center">
+      <p>No users subscribed</p>
+    </div>
+
+    <% } else { %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date Subscribed</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% subscriptions?.forEach(function(subscription) { %>
+
+        <tr>
+          <td>
+            <p><%= subscription?.email %></p>
+          </td>
+          <td>
+            <%= subscription?.createdAt.toLocaleDateString('default', { month:
+            'long', day: 'numeric', year: 'numeric' }) %> %>
+          </td>
+          <td>
+            <a href="/dashboard/subscription-delete/<%= subscription._id %>"
+              ><i
+                class="bx bxs-message-square-x bx-sm bx-tada-hover text-danger"
+              ></i
+            ></a>
+          </td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+    </table>
+    <% if (subscriptions.length !== 0) { %>
+    <div class="row">
+      <ul class="pagination d-flex justify-content-center pagination-margin">
+        <li class="page-item <%= (page == 1||undefined) ? 'disabled' : '' %>">
+          <a
+            class="page-link"
+            href="/dashboard/subscriptions?page=<%= page-1 %>"
+            >Previous</a
+          >
+        </li>
+
+        <% let i = 1; while (i <= totalPages) { %>
+        <li class="page-item <%= i==page ? 'active' : '' %>">
+          <a class="page-link" href="/dashboard/subscriptions?page=<%= i %>"
+            ><%= i %></a
+          >
+        </li>
+        <% i++ } %>
+
+        <li class="page-item <%= (page == totalPages) ? 'disabled' : '' %>">
+          <a
+            class="page-link"
+            href="/dashboard/subscriptions?page=<%= nextPage %>"
+            >Next</a
+          >
+        </li>
+      </ul>
+    </div>
+    <% } %> <% } %>
+  </div>
+</div>
+<!-- SUBSCRIPTIONS DATA -->
+
+<!-- FOOTER -->
+<%- include('./partials/dashboard/footer.ejs'); %>
+<!-- FOOTER -->

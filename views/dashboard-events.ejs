@@ -1,0 +1,124 @@
+<!-- HEADER -->
+<%- include('./partials/dashboard/header.ejs'); %>
+<!-- HEADER -->
+
+<!-- AUTHORS DATA -->
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Events</h3>
+      <div>
+        <a href="/events" class="btn-blue">Add Event</a>
+      </div>
+    </div>
+
+    <nav class="nav nav-pills flex-column flex-sm-row nav-calendar" id="mbot-3">
+      <a
+        class="flex-sm-fill text-sm-center nav-link <%= filter === 'incoming' ? 'active' : '' %>"
+        aria-current="page"
+        href="/dashboard/events?filter=incoming"
+        >Incoming Events</a
+      >
+      <a
+        class="flex-sm-fill text-sm-center nav-link <%= filter === 'past' ? 'active' : '' %>"
+        href="/dashboard/events?filter=past"
+        >Past Events</a
+      >
+    </nav>
+
+    <% if (events?.length === 0 ) { %>
+
+    <div class="text-center">
+      <p>No events available!</p>
+    </div>
+
+    <% } else { %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Event Name</th>
+          <th>Preferred Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% events?.forEach(function(event) { %>
+
+        <!-- PREFERRED DATE FORMATTING -->
+        <% const prefDate = new Date(event.preferredDate); %> <% const prefYear
+        = prefDate.getUTCFullYear(); %> <% const prefMonth =
+        prefDate.toLocaleString('default', { month: 'long' }); %> <% const
+        prefDay = prefDate.getUTCDate(); %>
+
+        <tr>
+          <td>
+            <p><%= event?.email %></p>
+          </td>
+          <td><span><%= event?.orgEvent %></span></td>
+          <td><%= `${prefMonth} ${prefDay}, ${prefYear}` %></td>
+          <td>
+            <span
+              class="status <%= (event?.confirmation === 'Accepted') ? 'completed' : 'pending' %>"
+            >
+              <%= (event?.confirmation === "Accepted") ? "Accepted" : "Pending"
+              %>
+            </span>
+          </td>
+          <td>
+            <a href="/dashboard/event-view?id=<%= event._id %>"
+              ><i class="bx bx-show bx-sm bx-tada-hover"></i
+            ></a>
+            <a href="/dashboard/event-delete/<%= event._id %>"
+              ><i
+                class="bx bxs-message-square-x bx-sm bx-tada-hover text-danger"
+              ></i
+            ></a>
+          </td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+
+      <% } %>
+    </table>
+    <% if (events.length !== 0) { %>
+    <div class="row">
+      <ul class="pagination d-flex justify-content-center pagination-margin">
+        <li class="page-item <%= (page == 1||undefined) ? 'disabled' : '' %>">
+          <a
+            class="page-link"
+            href="/dashboard/events?page=<%= page-1 %>&filter=<%= filter %>"
+            >Previous</a
+          >
+        </li>
+
+        <% let i = 1; while (i <= totalPages) { %>
+        <li class="page-item <%= i==page ? 'active' : '' %>">
+          <a
+            class="page-link"
+            href="/dashboard/events?page=<%= i %>&filter=<%= filter %>"
+            ><%= i %></a
+          >
+        </li>
+        <% i++ } %>
+
+        <li class="page-item <%= (page == totalPages) ? 'disabled' : '' %>">
+          <a
+            class="page-link"
+            href="/dashboard/events?page=<%= nextPage %>&filter=<%= filter %>"
+            >Next</a
+          >
+        </li>
+      </ul>
+    </div>
+    <% } %>
+  </div>
+</div>
+<!-- AUTHOR DATA -->
+
+<!-- FOOTER -->
+<%- include('./partials/dashboard/footer.ejs'); %>
+<!-- FOOTER -->

@@ -1,0 +1,185 @@
+<footer class="text-black bg-white pt-4 pb-2">
+  <div class="container">
+    <!-- Top part of footer -->
+    <div class="row">
+      <!-- Contact & Meditators -->
+      <div class="col-md-6 d-flex flex-row" id="lists">
+        <div class="listsRow flex-column">
+          <ul class="list-unstyled">
+            <h5>Authors & Events</h5>
+            <li>
+              <a href="/author/julie_mandal" class="d-inline-block"
+                >Julie Mandal</a
+              >
+            </li>
+            <li>
+              <a href="/author/gita_pattison" class="d-inline-block"
+                >Gita Pattison</a
+              >
+            </li>
+            <li>
+              <a href="/calendar?page=1" class="d-inline-block">Event Calendar</a>
+            </li>
+            <li>
+              <a href="/events" class="d-inline-block">Book Author Event</a>
+            </li>
+          </ul>
+        </div>
+        <div class="listsRow flex-column" id="listRow2">
+          <h5>Meet Meditators</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a
+                href="https://sahajayoga.at/meditations-kurse-finden/"
+                class="d-inline-block position-relative"
+                >Austria</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.sahajayoga.ca/free-classes"
+                class="d-inline-block position-relative"
+                >Canada</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.sahajayoga.de/kurse/"
+                class="d-inline-block position-relative"
+                >Germany</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://us.sahajayoga.org/classes-near-me/"
+                class="d-inline-block position-relative"
+                >United States</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Subscription Form -->
+      <div class="col-md-6">
+        <h5>Receive updates straight to your inbox</h5>
+        <form id="subscribeForm" class="form-inline d-flex">
+          <input
+            type="email"
+            name="email"
+            class="form-control mb-2 mr-sm-2"
+            placeholder="Your Email Address"
+          />
+          <button type="submit" class="btn btn-warning mb-2">Subscribe</button>
+        </form>
+        <p id="email-validation" class="email-validation validation-font"></p>
+        <p class="agreement">
+          By subscribing, I am agreeing to the
+          <a href="/TOS">Terms of Use</a> and
+          <a href="/policy">Privacy Policy</a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom part of footer -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <small>&copy; 2024 Meditation Workbook CA. All Rights Reserved</small>
+      </div>
+      <div
+        class="col-md-6 text-md-right d-flex justify-content-end"
+        id="utility-right"
+      >
+        <a
+          href="/TOS"
+          class="text-black mr-2 d-inline-block position-relative"
+          id="TOS"
+          >Terms of Service</a
+        >
+        <a
+          href="/policy"
+          class="text-black d-inline-block position-relative"
+          id="privacyPolicy"
+          >Privacy Policy</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <form action="/user/new-user" method="POST">
+        <div class="modal-body">
+          <div class="card p-4 pb-0 text-center border-0" id="card">
+            <img
+              src="img/meditationworkbook.png"
+              class="rounded-circle mb-4 mx-auto"
+              alt="Admin Logo"
+              width="180px"
+            />
+
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text"
+                  ><i class="fa-solid fa-user"></i
+                ></span>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="email"
+                  id="email"
+                  name="email"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text"
+                  ><i class="fa-solid fa-lock"></i
+                ></span>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="password"
+                  id="password"
+                  name="password"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-top-0 pb-4 w-full">
+          <button class="btn btn-warning login-modal">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

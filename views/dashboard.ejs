@@ -1,0 +1,203 @@
+<!-- HEADER -->
+<%- include('./partials/dashboard/header.ejs'); %>
+<!-- HEADER -->
+<!-- CARD TOTAL -->
+<%- include('./partials/dashboard/cardTotal.ejs'); %>
+<!-- CARD TOTAL -->
+
+<!-- AUTHOR DATA -->
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Active Accounts</h3>
+      <div></div>
+    </div>
+
+    <% if (users?.length === 0 ) { %>
+
+    <div class="text-center">
+      <p>No authors available!</p>
+    </div>
+
+    <% } else { %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Date Created</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.slice(0,3)?.forEach(function(user) { %>
+
+        <tr>
+          <td>
+            <p><%= user?.username %></p>
+          </td>
+          <td>
+            <%= user?.createdAt.toLocaleDateString('default', { month: 'long',
+            day: 'numeric', year: 'numeric' }) %> %>
+          </td>
+          <td><span class="status completed">Active</span></td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+    </table>
+
+    <% } %>
+  </div>
+</div>
+
+<!-- EVENTS DATA -->
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Incoming Events</h3>
+    </div>
+
+    <% if (events?.length === 0 ) { %>
+
+    <div class="text-center">
+      <p>No events available!</p>
+    </div>
+
+    <% } else { %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Event Name</th>
+          <th>Preferred Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% events.slice(0,3)?.forEach(function(event) { %>
+
+        <!-- PREFERRED DATE FORMATTING -->
+        <% const prefDate = new Date(event.preferredDate); %> <% const prefYear
+        = prefDate.getUTCFullYear(); %> <% const prefMonth =
+        prefDate.toLocaleString('default', { month: 'long' }); %> <% const
+        prefDay = prefDate.getUTCDate(); %>
+
+        <tr>
+          <td>
+            <p><%= event?.email %></p>
+          </td>
+          <td><span><%= event?.orgEvent %></span></td>
+          <td><%= `${prefMonth} ${prefDay}, ${prefYear}` %></td>
+          <td>
+            <span
+              class="status <%= (event?.confirmation === 'Accepted') ? 'completed' : 'pending' %>"
+            >
+              <%= (event?.confirmation === "Accepted") ? "Accepted" :
+              "Pending"%></span
+            >
+          </td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+
+      <% } %>
+    </table>
+  </div>
+</div>
+
+<!-- BLOG DATA -->
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Latest Blogs</h3>
+    </div>
+
+    <% if (blogs?.length === 0 ) { %>
+
+    <div class="text-center">
+      <p>No blogs available!</p>
+    </div>
+
+    <% } else { %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Date Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% blogs.slice(0,3)?.forEach(function(blog) { %>
+
+        <tr>
+          <td>
+            <img src="../img/uploads/<%= blog?.img %>" />
+            <p><%= blog?.email %></p>
+          </td>
+
+          <td><span><%= blog?.title %></span></td>
+          <td>
+            <%= blog?.createdAt.toLocaleDateString('default', { month: 'long',
+            day: 'numeric', year: 'numeric' }) %> %>
+          </td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+    </table>
+
+    <% } %>
+  </div>
+</div>
+
+<!-- SUBSCRIPTION DATA -->
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Latest Subscribers</h3>
+      <div></div>
+    </div>
+
+    <% if (subscriptions?.length === 0 ) { %>
+
+    <div class="text-center">
+      <p>No subscribers available!</p>
+    </div>
+
+    <% } else { %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date Subscribed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% subscriptions.slice(0,3)?.forEach(function(subscription) { %>
+
+        <tr>
+          <td>
+            <p><%= subscription?.email %></p>
+          </td>
+          <td>
+            <%= subscription?.createdAt.toLocaleDateString('default', { month:
+            'long', day: 'numeric', year: 'numeric' }) %> %>
+          </td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+    </table>
+    <% } %>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<%- include('./partials/dashboard/footer.ejs'); %>
+<!-- FOOTER -->

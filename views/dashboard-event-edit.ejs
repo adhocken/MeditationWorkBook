@@ -1,0 +1,203 @@
+<%- include('./partials/dashboard/header.ejs'); %>
+<!-- HEADER -->
+
+<!-- BLOGS DATA -->
+<div class="table-data" id="tdfont">
+  <div class="order">
+    <div class="head_blog_new">
+      <h3>Edit Event</h3>
+      <div class="event-container">
+        <!-- Event Details Form -->
+        <form
+          id="editEventForm"
+          action="/dashboard/event-edit?id=<%= event[0]?._id %>"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="name"><strong>Name/Organization:</strong></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              value="<%= event[0].name %>"
+            />
+            <p
+              class="event-name-validation validation-font text-danger"
+              id="event-name-validation"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email"><strong>Email:</strong></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              value="<%= event[0].email %>"
+            />
+            <p
+              class="event-email-validation validation-font text-danger"
+              id="event-email-validation"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="contact"><strong>Contact Number:</strong></label>
+            <input
+              type="tel"
+              id="contact"
+              name="contact"
+              class="form-control"
+              value="<%= event[0].contact %>"
+            />
+            <p
+              class="event-contact-validation validation-font text-danger"
+              id="event-contact-validation"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="orgEvent"><strong>Event Name:</strong></label>
+            <input
+              type="text"
+              id="orgEvent"
+              name="orgEvent"
+              class="form-control"
+              value="<%= event[0].orgEvent %>"
+            />
+            <p
+              class="event-orgEvent-validation validation-font text-danger"
+              id="event-orgEvent-validation"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="location"><strong>Location:</strong></label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              class="form-control"
+              value="<%= event[0].location %>"
+            />
+            <p
+              class="event-location-validation validation-font text-danger"
+              id="event-location-validation"
+            ></p>
+          </div>
+
+          <% const prefDate = new Date(event[0].preferredDate); const prefYear =
+          prefDate .getUTCFullYear(); const prefMonth =
+          prefDate.toLocaleString('default', { month: 'long' }); const prefDay =
+          prefDate.getUTCDate(); %>
+
+          <div class="form-group">
+            <label for="preferredDate"><strong>Preferred Date:</strong></label>
+            <input
+              type="text"
+              id="preferredDate"
+              name="preferredDate"
+              class="form-control"
+              value="<%= `${prefMonth} ${prefDay}, ${prefYear}` %>"
+            />
+            <p
+              class="event-preferredDate-validation validation-font text-danger"
+              id="event-preferredDate-validation"
+            ></p>
+          </div>
+
+          <% const altDate = new Date(event[0].alternateDate); const altYear =
+          altDate.getUTCFullYear(); const altMonth =
+          altDate.toLocaleString('default', { month: 'long' }); const altDay =
+          altDate.getUTCDate(); %>
+
+          <div class="form-group">
+            <label for="alternateDate"><strong>Alternate Date:</strong></label>
+            <input
+              type="text"
+              id="alternateDate"
+              name="alternateDate"
+              class="form-control"
+              value="<%= `${altMonth} ${altDay}, ${altYear}` %>"
+            />
+            <p
+              class="event-alternateDate-validation validation-font text-danger"
+              id="event-alternateDate-validation"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="time"><strong>Tentative Time</strong></label>
+            <input
+              type="time"
+              id="time"
+              name="time"
+              class="form-control"
+              value="<%= event[0].time %>"
+            />
+            <p
+              class="event-time-validation validation-font text-danger"
+              id="event-time-validation"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="attendees"><strong>Attendees:</strong></label>
+            <input
+              type="string"
+              id="attendees"
+              name="attendees"
+              class="form-control"
+              value="<%= event[0].attendees %>"
+            />
+            <p
+              class="event-attendees-validation validation-font text-danger"
+              id="event-attendees-validation"
+            ></p>
+          </div>
+
+          <div class="form-group">
+            <label for="additionalDetails"
+              ><strong>Additional Details:</strong></label
+            >
+            <textarea
+              id="additionalDetails"
+              name="additionalDetails"
+              class="form-control"
+              rows="4"
+            >
+<%= event[0].additionalDetails %></textarea
+            >
+            <p
+              class="event-additionalDetails-validation validation-font text-danger"
+              id="event-additionalDetails-validation"
+            ></p>
+          </div>
+          <div class="email-buttons mtop-1">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="window.location.href='/dashboard/event-view?id=<%= event[0]._id %>'"
+            >
+              Back
+            </button>
+            <button type="submit" class="btn btn-primary email-send">
+              Save Changes
+            </button>
+          </div>
+          <div
+            class="d-flex align-items-center justify-content-center"
+            id="form-message"
+          ></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- BLOGS DATA -->
+
+  <!-- FOOTER -->
+  <%- include('./partials/dashboard/footer.ejs'); %>
+  <!-- FOOTER -->
+</div>

@@ -1,0 +1,128 @@
+<%- include('./partials/blogHeader.ejs'); %>
+
+<div class="bg-image-others"></div>
+
+<main class="main-container">
+  <section class="calendar-container">
+    <div class="container">
+      <div class="row">
+        <div class="calendar">
+          <nav class="nav nav-pills flex-column flex-sm-row nav-calendar">
+            <a
+              class="flex-sm-fill text-sm-center nav-link <%= filter === 'incoming' ? 'active' : '' %>"
+              aria-current="page"
+              href="/calendar?filter=incoming"
+              >Incoming Events</a
+            >
+            <a
+              class="flex-sm-fill text-sm-center nav-link <%= filter === 'past' ? 'active' : '' %>"
+              href="/calendar?filter=past"
+              >Past Events</a
+            >
+          </nav>
+
+          <% if (calendarEvents.length === 0) { %>
+
+          <div>No incoming events yet! Check back later.</div>
+
+          <% } else { %> <% calendarEvents?.forEach(function(event) { const
+          prefDate = new Date(event.preferredDate); const prefMonth =
+          prefDate.toLocaleString('default', { month: 'long' }); const prefDay =
+          prefDate.getUTCDate(); const prefYear = prefDate.getUTCFullYear(); %>
+
+          <div class="accordion" id="eventAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#<%= event._id %>"
+                  aria-expanded="false"
+                  aria-controls="collapseOne"
+                >
+                  <a href="#" class="event clearfix">
+                    <div class="event_icon">
+                      <div class="event_month text-center">
+                        <%= prefMonth %>
+                      </div>
+                      <div class="event_day text-center"><%= prefDay %></div>
+                    </div>
+                    <div class="event_title"><%= event.orgEvent %></div>
+                  </a>
+                </button>
+              </h2>
+              <div
+                id="<%= event._id %>"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#eventAccordion"
+              >
+                <div class="accordion-body">
+                  <ul>
+                    <li>
+                      <strong>Event Description: </strong>
+                      <p><%= event.additionalDetails %></p>
+                    </li>
+                    <li>
+                      <strong>Location: </strong>
+                      <p><%= event.location %></p>
+                    </li>
+                    <li>
+                      <strong>Date: </strong>
+                      <p><%= `${prefMonth} ${prefDay}, ${prefYear}` %></p>
+                    </li>
+                    <li>
+                      <strong>Time: </strong>
+                      <p><%= event.time %></p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <% }); %> <% } %> <% if (calendarEvents.length !== 0) { %>
+          <div class="row">
+            <ul
+              class="pagination d-flex justify-content-center pagination-margin"
+            >
+              <li
+                class="page-item <%= (page == 1 || page === undefined) ? 'disabled' : '' %>"
+              >
+                <a
+                  class="page-link"
+                  href="/calendar?page=<%= page-1 %>&filter=<%= filter %>"
+                  >Previous</a
+                >
+              </li>
+
+              <% for (let i = 1; i <= totalPages; i++) { %>
+              <li class="page-item <%= i == page ? 'active' : '' %>">
+                <a
+                  class="page-link"
+                  href="/calendar?page=<%= i %>&filter=<%= filter %>"
+                  ><%= i %></a
+                >
+              </li>
+              <% } %>
+
+              <li
+                class="page-item <%= (page == totalPages) ? 'disabled' : '' %>"
+              >
+                <a
+                  class="page-link"
+                  href="/calendar?page=<%= nextPage %>&filter=<%= filter %>"
+                  >Next</a
+                >
+              </li>
+            </ul>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./partials/blogFooter.ejs'); %>

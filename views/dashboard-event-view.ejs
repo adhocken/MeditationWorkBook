@@ -1,0 +1,193 @@
+<%- include('./partials/dashboard/header.ejs'); %>
+<!-- HEADER -->
+
+<!-- BLOGS DATA -->
+<div class="table-data" id="tdfont">
+  <div class="order">
+    <div class="head_blog_new">
+      <div class="d-flex justify-content-between">
+        <h3>View Event</h3>
+        <div class="slider-box">
+          <input type="checkbox" id="event-slider" hidden <%= event[0].privacy
+          === 'Public' ? 'checked' : '' %> />
+          <label for="event-slider" class="event-slider"></label>
+          <span id="privacy-status"><%= event[0].privacy %></span>
+        </div>
+      </div>
+
+      <div class="event-container">
+        <!-- Event Details Form -->
+        <form id="viewEventForm">
+          <input type="hidden" id="event-id" value="<%= event[0]._id %>" />
+          <div class="form-group">
+            <label for="eventName"><strong>Name/Organization:</strong></label>
+            <input
+              type="text"
+              id="eventName"
+              class="form-control"
+              value="<%= event[0].name %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="eventEmail"><strong>Email:</strong></label>
+            <input
+              type="email"
+              id="eventEmail"
+              class="form-control"
+              value="<%= event[0].email %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact"><strong>Contact Number:</strong></label>
+            <input
+              type="tel"
+              id="eventContact"
+              class="form-control"
+              value="<%= event[0].contact %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="eventOrg"><strong>Event Name:</strong></label>
+            <input
+              type="text"
+              id="eventOrg"
+              class="form-control"
+              value="<%= event[0].orgEvent %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="eventLocation"><strong>Location:</strong></label>
+            <input
+              type="text"
+              id="eventLocation"
+              class="form-control"
+              value="<%= event[0].location %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <% const prefDate = new Date(event[0].preferredDate); const prefYear =
+          prefDate .getUTCFullYear(); const prefMonth =
+          prefDate.toLocaleString('default', { month: 'long' }); const prefDay =
+          prefDate.getUTCDate(); %>
+
+          <div class="form-group">
+            <label for="preferredDate"><strong>Preferred Date:</strong></label>
+            <input
+              type="text"
+              id="preferredDate"
+              class="form-control"
+              value="<%= `${prefMonth} ${prefDay}, ${prefYear}` %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <% const altDate = new Date(event[0].alternateDate); const altYear =
+          altDate.getUTCFullYear(); const altMonth =
+          altDate.toLocaleString('default', { month: 'long' }); const altDay =
+          altDate.getUTCDate(); %>
+
+          <div class="form-group">
+            <label for="alternateDate"><strong>Alternate Date:</strong></label>
+            <input
+              type="text"
+              id="alternateDate"
+              class="form-control"
+              value="<%= `${altMonth} ${altDay}, ${altYear}` %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="time"><strong>Tentative Time:</strong></label>
+            <input
+              type="time"
+              id="time"
+              class="form-control"
+              value="<%= event[0].time %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="attendees"><strong>Attendees:</strong></label>
+            <input
+              type="number"
+              id="attendees"
+              class="form-control"
+              value="<%= event[0].attendees %>"
+              readonly
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="additionalDetails"
+              ><strong>Additional Details:</strong></label
+            >
+            <textarea
+              id="additionalDetails"
+              class="form-control"
+              rows="4"
+              readonly
+              disabled
+            >
+<%= event[0].additionalDetails %></textarea
+            >
+          </div>
+        </form>
+      </div>
+
+      <div class="action-buttons">
+        <a
+          href="/dashboard/confirmEvent?id=<%= event[0]._id %>"
+          role="button"
+          class="btn btn-primary"
+          id="bgdg"
+          >Confirm Event</a
+        >
+        <a
+          href="/dashboard/event-edit?id=<%= event[0]._id %>"
+          role="button"
+          class="btn btn-warning"
+          id="bgo"
+          >Edit Event</a
+        >
+        <a
+          href="/dashboard/notifyEvent?id=<%= event[0]._id %>"
+          role="button"
+          class="btn btn-danger"
+          id="bgv"
+          >Notify Organizers</a
+        >
+        <a
+          href="/dashboard/events?page=1"
+          role="button"
+          class="btn btn-secondary"
+          >Return to Events Page</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BLOGS DATA -->
+
+<!-- FOOTER -->
+<%- include('./partials/dashboard/footer.ejs'); %>
+<!-- FOOTER -->

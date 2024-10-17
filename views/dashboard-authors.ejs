@@ -1,0 +1,64 @@
+<!-- HEADER -->
+<%- include('./partials/dashboard/header.ejs'); %>
+<!-- HEADER -->
+
+<!-- AUTHORS DATA -->
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Authors</h3>
+      <div>
+        <a href="/user/new_user" class="btn-blue">Add Account</a>
+      </div>
+    </div>
+
+    <% if (users?.length === 0 ) { %>
+
+    <div class="text-center">
+      <p>No authors available!</p>
+    </div>
+
+    <% } else { %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Date Created</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users?.forEach(function(user) { %>
+
+        <tr>
+          <td>
+            <p><%= user?.username %></p>
+          </td>
+          <td>
+            <%= user?.createdAt.toLocaleDateString('default', { month: 'long',
+            day: 'numeric', year: 'numeric' }) %>
+          </td>
+          <td><span class="status completed">Active</span></td>
+          <td>
+            <a href="/dashboard/user-delete/<%= user._id %>"
+              ><i
+                class="bx bxs-message-square-x bx-sm bx-tada-hover delete-author"
+              ></i
+            ></a>
+          </td>
+        </tr>
+
+        <% }) %>
+      </tbody>
+    </table>
+
+    <% } %>
+  </div>
+</div>
+<!-- AUTHOR DATA -->
+
+<!-- FOOTER -->
+<%- include('./partials/dashboard/footer.ejs'); %>
+<!-- FOOTER -->

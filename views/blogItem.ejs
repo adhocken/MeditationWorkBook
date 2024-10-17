@@ -1,0 +1,31 @@
+<%- include('./partials/blogHeader.ejs'); %>
+
+<!-- Background image -->
+<div class="bg-image-others"></div>
+
+<main class="main-container">
+  <section class="blog-updates">
+    <div class="container">
+      <!-- Blog Headline -->
+      <div class="row m-4">
+        <div class="col-12">
+          <h1 class="jumbotron text-center"><%- blog.title %></h1>
+          <div class="blogItemContainer d-flex flex-row">
+            <div>
+              <p class="blogBody"><%- blog.body %></p>
+            </div>
+            <div class="blogImage d-flex justify-content-sm-center">
+              <img
+                src="../img/uploads/<%- blog.img %>"
+                alt="Blog Image"
+                height="500"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./partials/blogFooter.ejs'); %>

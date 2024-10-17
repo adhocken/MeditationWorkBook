@@ -1,0 +1,38 @@
+<ul class="box-info">
+  <a href="/dashboard/authors">
+    <li>
+      <i class="bx bxs-group"></i>
+      <span class="text">
+        <h3><%= (users?.length > 0) ? users?.length : 0 %></h3>
+        <p>Authors</p>
+      </span>
+    </li>
+  </a>
+  <a href="/dashboard/events?page=1">
+    <li>
+      <i class="bx bxs-calendar"></i>
+      <span class="text">
+        <h3><%= (events?.length > 0) ? events?.length : 0 %></h3>
+        <p>Events</p>
+      </span>
+    </li>
+  </a>
+  <a href="/dashboard/blogs?page=1">
+    <li>
+      <i class="bx bxs-calendar-check"></i>
+      <span class="text">
+        <h3><%= (blogs?.length > 0) ? blogs?.length : 0 %></h3>
+        <p>Blogs</p>
+      </span>
+    </li>
+  </a>
+  <a href="/dashboard/subscriptions?page=1">
+    <li>
+      <i class="bx bxs-user-detail"></i>
+      <span class="text">
+        <h3><%= (subscriptions?.length > 0) ? subscriptions?.length : 0 %></h3>
+        <p>Subscriptions</p>
+      </span>
+    </li>
+  </a>
+</ul>
